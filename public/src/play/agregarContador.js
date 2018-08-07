@@ -64,7 +64,6 @@ const Link = ({ activo, children, func }) => {
 };
 
 class Visibles extends Component {
-
   componentDidMount = () => {
     this.uns = store.subscribe(() => {
       this.forceUpdate();
