@@ -4,13 +4,15 @@ import ReactDOM from "react-dom";
 import { App } from "./play/agregarContador";
 import { ReducerApp } from "./play/reduxPlay";
 import { createStore } from "redux";
-
+import { Provider } from "react-redux";
 export let store = createStore(ReducerApp);
 import "./styles/index.scss";
 
 import "normalize.css";
 
 ReactDOM.render(
-  <App {...store.getState()} />, //? pasa los argumentos con las mismas etiquetas que el objeto retornado
+  <Provider store={store}>
+    <App /> 
+  </Provider>,
   document.getElementById("titulo")
 );
